@@ -10,8 +10,8 @@ services:
       - "443:443"
       - "8080:8080"
     volumes:
-      - ./docker/nging/conf.d:/etc/nginx/conf.d
-      - ./docker/nging/html:/etc/nginx/html
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d
+      - ./docker/nginx/html:/etc/nginx/html
     depends_on:
       - mysql
       - redis
@@ -22,10 +22,10 @@ services:
       - "3306:3306"
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root   # 修改成你的密码
-      MYSQL_DATABASE: mydb
-      MYSQL_USER: myuser
-      MYSQL_PASSWORD: mypass
+      MYSQL_ROOT_PASSWORD: 123456   # 修改成你的密码
+      TZ: Asia/Shanghai
+      MYSQL_USER: xinrou
+      MYSQL_PASSWORD: xinrou
     volumes:
       - ./docker/mysql/data:/var/lib/mysql
       - ./docker/mysql/conf:/etc/mysql/conf.d
@@ -33,10 +33,10 @@ services:
     image: redis:latest
     container_name: redis
     restart: always
-    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    command: ["redis-server", "/usr/local/etc/redis/conf/redis.conf"]
     ports:
       - "6379:6379"
     volumes:
       - ./docker/redis/data:/redis/data
-      - ./docker/redis/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./docker/redis/conf:/usr/local/etc/redis/conf
 

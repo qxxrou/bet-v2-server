@@ -10,23 +10,5 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url      = "mysql://root:12345678@localhost:3306/monorepo"
-}
-
-
-model User {
-  id Int @id @default(autoincrement())
-  name String 
-  age Int
-
-  posts Posts[]
-}
-
-model Posts {
-  id Int @id @default(autoincrement())
-  authorId Int
-  title String 
-  article String
-
-  user User @relation(fields: [authorId],references: [id])
+  url      = "mysql://root:12345678@localhost:3306/bet"
 }

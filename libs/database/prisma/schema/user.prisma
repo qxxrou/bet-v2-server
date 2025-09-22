@@ -1,0 +1,12 @@
+model user {
+  id Int @id @unique @default(autoincrement())
+  up_id Int 
+  reg_time DateTime @db.DateTime() 
+  log_time DateTime @db.DateTime()
+  user_name String @db.VarChar(64)
+  password String @db.VarChar(64)
+  phone String @db.VarChar(64) @unique
+  email String @db.VarChar(64) @unique
+
+  real_name String @unique
+}
