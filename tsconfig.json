@@ -18,11 +18,18 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
+      "#constants":["./constants"],
       "@app/database": [
         "libs/database/src"
       ],
       "@app/database/*": [
         "libs/database/src/*"
+      ],
+      "@app/databases": [
+        "libs/databases/src"
+      ],
+      "@app/databases/*": [
+        "libs/databases/src/*"
       ],
       "@app/redis": [
         "libs/redis/src"

@@ -5,14 +5,15 @@
   "author": "",
   "private": true,
   "workspaces": [
-    "apps/*"
+    "apps/*",
+    "libs/*"
   ],
   "license": "UNLICENSED",
   "scripts": {
     "build-base": "nest build b base",
     "build-wallet": "nest build wallet",
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
-    "start-all": "nest start base && nest start wallet",
+    "start-all": "nest start base --watch && nest start wallet --watch",
     "start-base:dev": "nest start base --watch",
     "start-wallet:dev": "nest start wallet --watch",
     "start-base:debug": "nest start base --debug --watch",
@@ -30,8 +31,8 @@
     "@nestjs/common": "^11.0.1",
     "@nestjs/core": "^11.0.1",
     "@nestjs/platform-express": "^11.0.1",
-    "@prisma/client": "^6.13.0",
-    "prisma": "^6.13.0",
+    "@prisma/client": "^6.16.2",
+    "prisma": "^6.16.2",
     "redis": "^5.8.0",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1"
@@ -86,6 +87,7 @@
     ],
     "moduleNameMapper": {
       "^@app/database(|/.*)$": "<rootDir>/libs/database/src/$1",
+      "^@app/databases(|/.*)$": "<rootDir>/libs/databases/src/$1",
       "^@app/redis(|/.*)$": "<rootDir>/libs/redis/src/$1"
     }
   }
