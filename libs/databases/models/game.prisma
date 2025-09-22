@@ -1,0 +1,27 @@
+model game_type {
+  type String @id
+
+  games game[]
+}
+
+model game_product {
+  id Int @id
+
+  games game[]
+}
+
+model game {
+  game_code String @id
+  game_name String 
+  game_type String 
+  product_id Int
+  product_code Int
+  status Int
+  support_currency String
+  allow_free_round Int
+  lang_name String
+  lang_icon String
+
+  type game_type @relation(fields: [game_type],references: [type])
+  product game_product @relation(fields: [product_code],references: [id])
+}
