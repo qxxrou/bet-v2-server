@@ -1,5 +1,6 @@
 model game_type {
-  type String @id
+  id Int @id
+  type String @unique
 
   games game[]
 }
@@ -12,7 +13,7 @@ model game_product {
 
 model game {
   game_code String @id
-  game_name String 
+  game_name String
   game_type String 
   product_id Int
   product_code Int
