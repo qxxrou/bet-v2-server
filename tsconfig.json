@@ -18,7 +18,9 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "#constants":["./constants"],
+      "#constants": [
+        "./constants"
+      ],
       "@app/database": [
         "libs/database/src"
       ],
@@ -36,6 +38,12 @@
       ],
       "@app/redis/*": [
         "libs/redis/src/*"
+      ],
+      "@app/utils": [
+        "libs/utils/src"
+      ],
+      "@app/utils/*": [
+        "libs/utils/src/*"
       ]
     }
   }

@@ -88,7 +88,8 @@
     "moduleNameMapper": {
       "^@app/database(|/.*)$": "<rootDir>/libs/database/src/$1",
       "^@app/databases(|/.*)$": "<rootDir>/libs/databases/src/$1",
-      "^@app/redis(|/.*)$": "<rootDir>/libs/redis/src/$1"
+      "^@app/redis(|/.*)$": "<rootDir>/libs/redis/src/$1",
+      "^@app/utils(|/.*)$": "<rootDir>/libs/utils/src/$1"
     }
   }
 }
