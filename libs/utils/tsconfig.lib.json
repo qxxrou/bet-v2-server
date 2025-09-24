@@ -5,7 +5,6 @@
     "declaration": true,
     "outDir": "../../dist/libs/utils",
     "rootDir": "src",
-    "tsBuildInfoFile": ".../../dist/libs/utils/tsconfig.tsbuildinf"
   },
   "include": ["./src/**/*"],
   "exclude": ["node_modules", "dist", "test", "**/*spec.ts"]

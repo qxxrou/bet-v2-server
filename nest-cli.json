@@ -3,7 +3,11 @@
   "collection": "@nestjs/schematics",
   "sourceRoot": "apps/app",
   "compilerOptions": {
-    "deleteOutDir": true
+    "deleteOutDir": true,
+    "builder":{
+      "type": "webpack"
+    },
+    "webpackConfigPath": "webpack.config.js"
   },
   "monorepo": true,
   "root": "apps/app",
