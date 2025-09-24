@@ -1,0 +1,56 @@
+model game_type {
+  id            Int            @id @default(autoincrement())
+  type          String         @unique
+  games         game[]
+  game_products game_product[]
+}
+
+model game_product {
+  provider_id   Int                 @id
+  provider      String
+  currency      String
+  status        String
+  product_id    Int
+  product_code  Int
+  game_type     String
+  product_name  String
+  games         game[]
+  product_types game_type           @relation(fields: [game_type], references: [type])
+  product_extra game_product_extra?
+
+  @@unique([product_code, product_id])
+  @@index([game_type], map: "game_product_game_type_fkey")
+}
+
+model game_product_extra {
+  id           Int          @id @default(autoincrement())
+  provider_id  Int          @unique
+  game_product game_product @relation(fields: [provider_id], references: [provider_id])
+}
+
+model game {
+  game_code        String       @id
+  game_name        String
+  game_type        String
+  product_id       Int
+  product_code     Int
+  /// 目前遊戲狀態 停用：遊戲已停用。無法啟動 已啟動：遊戲可以啟動 維護：遊戲正在維護中
+  status           Int
+  support_currency String
+  allow_free_round Int
+  lang_name        String
+  lang_icon        String
+  type             game_type    @relation(fields: [game_type], references: [type])
+  product          game_product @relation(fields: [product_code, product_id], references: [product_code, product_id])
+  game_extras      game_extra?
+
+  @@index([game_type], map: "game_game_type_fkey")
+  @@index([product_code, product_id], map: "game_product_code_product_id_fkey")
+}
+
+model game_extra {
+  id        Int    @id @default(autoincrement())
+  game_code String @unique
+  game_type String
+  game      game   @relation(fields: [game_code], references: [game_code])
+}

@@ -1,0 +1,10 @@
+model admin {
+  id          Int      @id @default(autoincrement())
+  username    String   @unique @db.VarChar(64)
+  password    String   @db.VarChar(64)
+  google_otp  String   @db.VarChar(64)
+  status      Boolean  @default(true)
+  create_tiim DateTime @default(now())
+  update_time DateTime
+  provision   String?  @db.VarChar(64)
+}

@@ -1,0 +1,17 @@
+{
+  "name": "@sport/admin",
+  "private":true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "db:migrate": "prisma migrate dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.17.1",
+  "dependencies": {
+    "@sport/db": "workspace:*"
+  }
+}
