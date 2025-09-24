@@ -2,7 +2,7 @@ import { Injectable, OnModuleDestroy, OnModuleInit } from '@nestjs/common'
 import { PrismaClient } from '@prisma/client'
 
 @Injectable()
-export class DatabasesService
+export class DbService
 	extends PrismaClient
 	implements OnModuleInit, OnModuleDestroy
 {
@@ -14,11 +14,7 @@ export class DatabasesService
 		}
 	}
 
-	async onModuleDestroy() {
-		await this.$disconnect()
-	}
-
-	constructor() {
-		super()
+	onModuleDestroy() {
+		this.$disconnect()
 	}
 }

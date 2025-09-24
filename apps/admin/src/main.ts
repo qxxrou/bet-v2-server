@@ -5,6 +5,7 @@ import {
 	NestFastifyApplication,
 } from '@nestjs/platform-fastify'
 import { VersioningType } from '@nestjs/common'
+import { ConfigService } from '@nestjs/config'
 async function bootstrap() {
 	const app = await NestFactory.create<NestFastifyApplication>(
 		AdminModule,
@@ -17,7 +18,10 @@ async function bootstrap() {
 		prefix: false,
 	})
 
-	// const config = app.get(ConfigService)
+	// console.log(process.env)
+
+	const config = app.get(ConfigService)
+	console.log(config.get('PORT'))
 
 	await app.listen(process.env.port ?? 6579)
 }

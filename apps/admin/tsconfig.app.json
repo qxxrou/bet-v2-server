@@ -9,7 +9,7 @@
   },
   "include": ["src/**/*","./index.d.ts"],
   "references": [
-    { "path": "../../libs/databases/tsconfig.lib.json"}
+    { "path": "../../libs/utils/tsconfig.lib.json"}
   ],
   "exclude": ["node_modules", "dist", "test", "**/*spec.ts"]
 }

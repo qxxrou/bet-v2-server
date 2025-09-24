@@ -29,6 +29,11 @@ export default tseslint.config(
 			'@typescript-eslint/no-explicit-any': 'warn',
 			'@typescript-eslint/no-floating-promises': 'off',
 			'@typescript-eslint/no-unsafe-argument': 'off',
+			'@typescript-eslint/no-unsafe-assignment': 'off',
+			'@typescript-eslint/ban-ts-comment': 'off',
+			'@typescript-eslint/no-unsafe-call': 'warn',
+			'@typescript-eslint/no-unnecessary-type-assertion': 'warn',
+			'@typescript-eslint/no-unsafe-member-access': 'warn',
 		},
 	},
 )

@@ -1,5 +1,5 @@
 {
-  "name": "databases",
+  "name": "@sport/redis",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,9 +9,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.17.1",
-  "dependencies": {
-    "@prisma/client": "6.16.2",
-    "prisma": "^6.16.2"
-  }
+  "packageManager": "pnpm@10.17.1"
 }

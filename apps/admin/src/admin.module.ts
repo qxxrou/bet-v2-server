@@ -4,6 +4,8 @@ import { resolve } from 'node:path'
 import { APP_INTERCEPTOR, APP_PIPE } from '@nestjs/core'
 import { UserModule } from './user/user.module'
 import { ReplyInterceptor } from './interceptor/reply/reply.interceptor'
+import { DbModule } from './db/db.module'
+import { GameModule } from './game/game.module'
 
 @Module({
 	imports: [
@@ -13,6 +15,8 @@ import { ReplyInterceptor } from './interceptor/reply/reply.interceptor'
 			envFilePath: resolve(__dirname, 'admin', '.env'),
 		}),
 		UserModule,
+		DbModule,
+		GameModule,
 	],
 	providers: [
 		{

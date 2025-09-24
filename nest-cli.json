@@ -1,25 +1,36 @@
 {
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "apps/base",
+  "sourceRoot": "apps/app",
   "compilerOptions": {
-    "deleteOutDir": true,
-    "tsConfigPath": "apps/base/tsconfig.app.json",
-    "webpack": false
-  },
-  "generateOptions": {
-    "spec": false
+    "deleteOutDir": true
   },
   "monorepo": true,
-  "root": "apps/base",
+  "root": "apps/app",
   "projects": {
-    "base": {
+    "app":{
       "type": "application",
-      "root": "apps/base",
+      "root": "apps/app",
       "entryFile": "main",
-      "sourceRoot": "apps/base/src",
+      "sourceRoot": "apps/app/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/base/tsconfig.app.json"
+        "tsConfigPath": "apps/app/tsconfig.app.json"
+      }
+    },
+    "admin": {
+      "type": "application",
+      "root": "apps/admin",
+      "entryFile": "main",
+      "sourceRoot": "apps/admin/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/admin/tsconfig.app.json",
+        "assets": [
+          {
+            "include": "**/*.env",
+            "outDir": "dist/apps/admin"
+          }
+        ],
+        "watchAssets": true
       }
     },
     "databases": {

@@ -21,12 +21,6 @@
       "#constants": [
         "./constants"
       ],
-      "@app/database": [
-        "libs/database/src"
-      ],
-      "@app/database/*": [
-        "libs/database/src/*"
-      ],
       "@app/databases": [
         "libs/databases/src"
       ],
@@ -46,5 +40,10 @@
         "libs/utils/src/*"
       ]
     }
-  }
+  },
+  "references": [
+    { "path": "./libs/utils/tsconfig.lib.json" },
+    { "path": "./libs/redis/tsconfig.lib.json" },
+    { "path": "./apps/admin/tsconfig.app.json" },
+]
 }
