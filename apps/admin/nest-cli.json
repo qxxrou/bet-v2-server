@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "compilerOptions": {
+    "tsConfigPath": "../../tsconfig.admin.json" 
+  },
+  "projects": {
+    "admin": {                      
+      "root": "src",                  
+      "sourceRoot": "src",            
+      "entryFile": "main",            
+      "compilerOptions": {
+        "assets": ["*/**.yaml"]
+      }
+    }
+  }
+}

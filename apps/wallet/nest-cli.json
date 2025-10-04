@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "compilerOptions": {
+    "tsConfigPath": "../../tsconfig.wallet.json", 
+    "webpack": true                    
+  },
+  "projects": {
+    "wallet": {                      
+      "root": "src",                  
+      "sourceRoot": "src",            
+      "entryFile": "main",            
+      "compilerOptions": {
+        "assets": ["*/**.yaml"]
+      }
+    }
+  }
+}

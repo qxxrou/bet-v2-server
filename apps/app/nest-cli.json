@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "projects": {
+    "app": {                      
+      "root": "src",                  
+      "sourceRoot": "src",            
+      "entryFile": "main",            
+      "compilerOptions": {
+      "tsConfigPath": "../../tsconfig.app.json",
+      "deleteOutDir": true,
+        "assets": ["*/**.yaml"]
+      }
+    }
+  }
+}
